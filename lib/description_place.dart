@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 class DescriptionPlace extends StatelessWidget {
+  final String namePlace;
+  final int stars;
+  final String descriptionPlace;
+
+  DescriptionPlace(this.namePlace, this.stars, this.descriptionPlace);
+
   @override
   Widget build(BuildContext context) {
     final star = Container(
@@ -14,31 +20,44 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    final titleStarts = Container(
-      margin: EdgeInsets.only(top: 320),
-      child: Row(
-        children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(top: 0, left: 20, right: 20),
-            child: Text(
-              "Jose Vargas",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Row(
-            children: [
-              star,
-              star,
-              star,
-              star,
-              star,
-            ],
-          )
-        ],
+    final dialog = Container(
+      margin: EdgeInsets.only(top: 10, left: 20, right: 20),
+      child: Text(
+        descriptionPlace,
+        textAlign: TextAlign.justify,
       ),
     );
 
-    return titleStarts;
+    final titleStarts = Container(
+        margin: EdgeInsets.only(top: 320),
+        child: Row(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(top: 0, left: 20, right: 20),
+              child: Text(
+                namePlace,
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w900,
+                  fontFamily: "Lato",
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Row(
+              children: [
+                star,
+                star,
+                star,
+                star,
+                star,
+              ],
+            )
+          ],
+        ));
+
+    return Column(
+      children: [titleStarts, dialog],
+    );
   }
 }
