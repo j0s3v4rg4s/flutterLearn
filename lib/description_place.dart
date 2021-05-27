@@ -29,7 +29,7 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     final titleStarts = Container(
-        margin: EdgeInsets.only(top: 320),
+        margin: EdgeInsets.only(top: 220),
         child: Row(
           children: <Widget>[
             Container(

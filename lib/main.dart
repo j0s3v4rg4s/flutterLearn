@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'review.dart';
 import 'description_place.dart';
 
 void main() {
@@ -25,13 +26,19 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
+        fontFamily: "Lato",
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
           title: Text("Hello word"),
         ),
-        body: new DescriptionPlace("Jose vargas", 5, description),
+        body: Column(
+          children: [
+            new DescriptionPlace("Jose vargas", 5, description),
+            new Review(),
+          ],
+        ),
       ),
     );
   }
