@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'button.dart';
+
 class DescriptionPlace extends StatelessWidget {
   final String namePlace;
   final int stars;
@@ -29,7 +31,7 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     final titleStarts = Container(
-        margin: EdgeInsets.only(top: 220),
+        margin: EdgeInsets.only(top: 300),
         child: Row(
           children: <Widget>[
             Container(
@@ -57,7 +59,8 @@ class DescriptionPlace extends StatelessWidget {
         ));
 
     return Column(
-      children: [titleStarts, dialog],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [titleStarts, dialog, Button()],
     );
   }
 }
