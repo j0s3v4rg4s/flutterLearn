@@ -13,9 +13,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-
-  final Future<FirebaseApp> _initApp = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +21,7 @@ class MyApp extends StatelessWidget {
       statusBarIconBrightness: Brightness.light,
     ));
     return FutureBuilder(
-      future: _initApp,
+      future: Firebase.initializeApp(),
       builder: (context, snapshot) {
         print('init firebase');
         if (snapshot.hasError) {
